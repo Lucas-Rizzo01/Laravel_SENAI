@@ -50,4 +50,10 @@ class AlunoController extends Controller
         return redirect()->back()->with('success','Aluno atualizado com suceso');
     }
 
+    public function deletar($id){
+        $aluno = Aluno::findOrFail($id);
+        $aluno->delete();
+
+        return redirect()->route('aluno.listar')->with('success', 'Aluno excluido com sucesso');
+    }
 }
