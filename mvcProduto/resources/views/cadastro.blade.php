@@ -44,7 +44,7 @@
 
             @foreach ($setores as $setor)
                 <option value="{{ $setor->id }}">
-                    Setor - {{ $setor->nome }} - N° {{ $setor->nCorredor }}
+                    Setor - {{ $setor->nome }} - N° {{ $setor->numCorredor }}
                 </option>
             @endforeach
         </select>
