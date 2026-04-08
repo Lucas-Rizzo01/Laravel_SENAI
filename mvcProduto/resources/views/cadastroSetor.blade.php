@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Setores</title>
+    <title>Cadastro de Setoesr</title>
 </head>
 <body>
-    <h1>Cadastro de Setor</h1>
+    <h1>Cadastro de Setores</h1>
 
     @if(session('sucess'))
         <p style="color:green">{{ session('sucess')}}</p>
