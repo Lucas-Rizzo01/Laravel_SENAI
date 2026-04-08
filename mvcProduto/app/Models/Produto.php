@@ -10,5 +10,15 @@ class Produto extends Model
         'nome',
         'quant',
         'valor'
+        'setor_id',
+        'detalhes_id'
     ];
+    
+    public function setor(){
+        return $this->belongsTo(Setor::class);
+    }
+
+    public function detalhe(){
+        return $this->belongsTo(DetalhesProduto::class, 'detalhes_id');
+    }
 }
