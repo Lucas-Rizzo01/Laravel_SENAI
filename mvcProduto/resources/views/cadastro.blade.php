@@ -12,19 +12,43 @@
         <p style="color:green">{{session('success')}}</p>
     @endif
 
-    <form action="{{route('produto.salvar')}}" method="POST">
+    <form action="{{ route('produto.salvar') }}" method="POST">
         @csrf
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome" placeholder="Nome..." required value="{{old('nome')}}">
-
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Produto..." require value="{{old('nome')}}">
         <br><br>
-         <label for="quant">Quantidade: </label>
-        <input type="quant" name="quant" id="quant" placeholder="Quantidade..." required value="{{old('quant')}}">
 
+        <label for="qntd">Quantidade:</label>
+        <input type="text" name="quant" id="quant" placeholder="Quantidade..." require value="{{old('quantidade')}}">
         <br><br>
-         <label for="valor">Valor: </label>
-        <input type="valor" name="valor" id="valor" placeholder="Valor(R$)..." required value="{{old('valor')}}">
 
+        <label for="qntd">Preço:</label>
+        <input type="text" name="valor" id="valor" placeholder="Preço..." require value="{{old('preco')}}">
+        <br><br>
+
+        <label for="descricao">Descrição do Produto:</label>
+        <input type="textarea" name="descricao" id="descricao" placeholder="Descrição do Produto..." require value="{{old('descricao')}}">
+        <br><br>
+
+        <label for="tamanho">Tamanho do Produto:</label>
+        <input type="text" name="tamanho" id="tamanho" placeholder="Tamanho do Produto..." require value="{{old('tamanho')}}">
+        <br><br>
+
+        <label for="tamanho">Peso do Produto:</label>
+        <input type="text" name="peso" id="peso" placeholder="Peso do Produto..." require value="{{old('peso')}}">
+        <br><br>
+
+        <label for="setor_id">Setor:</label>
+        <select name="setor_id" id="setor_id" required>
+            <option value="" disabled selected>Selecione um Setor</option>
+
+            @foreach ($setores as $setor)
+                <option value="{{ $setor->id }}">
+                    Setor - {{ $setor->nome }} - N° {{ $setor->nCorredor }}
+                </option>
+            @endforeach
+        </select>
+        
         <input type="submit" value="Cadastrar">
     </form>
 
