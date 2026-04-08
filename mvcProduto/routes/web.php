@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\SetorController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+//rota produtos
 Route::get('/produto/listar',[ProdutoController::class, 'listar'])
 ->name('produto.listar');
 
@@ -26,3 +28,12 @@ Route::put('/produto/{id}/update', [ProdutoController::class, 'update'])
 
 Route::delete('/produto/{id}', [ProdutoController::class, 'deletar'])
 ->name('produto.deletar');
+
+//rota setores
+Route::get('/setor/cadastrar', function(){
+    return view('cadastroSetor');
+})->name('setor.cadastro');
+
+Route::post('/setor/salvar',[SetorController::class, 'add'])->name('setor.salvar');
+
+Route::get('/setor/listar',[SetorController::class, 'listarSetor'])->name('setor.listar');
