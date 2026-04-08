@@ -29,14 +29,14 @@
                 <tr>
                        <td>{{ $produto->id }}</td>
                     <td>{{ $produto->nome }}</td>
-                    <td>{{ $produto->quantidade }}</td>
-                    <td>{{ $produto->preco }}</td>
+                    <td>{{ $produto->quant }}</td>
+                    <td>{{ $produto->valor }}</td>
                     <td>{{ $produto->detalhe->descricao ?? '' }}</td>
                     <td>{{ $produto->detalhe->tamanho ?? '' }}</td>
                     <td>{{ $produto->detalhe->peso ?? '' }}</td>
                     <td>{{ $produto->setor?->id }}</td>
                     <td>{{ $produto->setor?->nome }}</td>
-                    <td>{{ $produto->setor?->nCorredor }}</td>
+                    <td>{{ $produto->setor?->numCorredor }}</td>
                     <td>
                         <a href="{{route('produto.atualizar', $produto->id)}}">Atualizar</a>
                     </td>
